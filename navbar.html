@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0,0.8);
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+
+        }
+
+        .navbar-ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #nav-logo {
+
+            height: 80px;
+        }
+
+        .navbar-brand {
+            margin-right: auto;
+        }
+
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: rgb(245, 245, 247);
+            padding: 15px;
+            font-size: 19px;
+            font-family: 'Lato', sans-serif;
+            transition-duration: 0.3s;
+        }
+
+        .nav-item a:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="navbar-logo">
+                <a href="/">
+                    <img src="/logo.png" alt="One Stop Auto Shop" title="One Stop Auto Shop" id="nav-logo">
+                </a>
+            </span>
+        </div>
+        <ul class="navbar-ul">
+
+            <li class="nav-item">
+                <a class="navbar-ul-li-a" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-ul-li-a" href="#">Section 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-ul-li-a" href="#">Section 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-ul-li-a" href="/contact-us.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-ul-li-a" href="/about-us.html">About Us</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

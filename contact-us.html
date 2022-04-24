@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <meta name="theme-color" content="#6957E7">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: rgb(228, 228, 228);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .container h2 {
+            width: 100%;
+            color: rgb(64, 56, 102);
+            font-weight: bold;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .inputs {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .input {
+            width: 40%;
+        }
+
+        .real-input {
+            background: transparent;
+            border: none;
+            font-size: 1.15em;
+            outline: none;
+            padding: 15px 25px;
+            border-radius: 31px;
+            background-color: white;
+            margin: 20px;
+            width: 100%;
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        #submit-button {
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            background: rgb(130, 127, 254);
+            width: 160px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+            transition: 0.5s;
+        }
+
+        #submit-button:hover {
+            background: rgb(64, 56, 102);
+            width: 180px;
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            transform: rotate(-45deg);
+            padding: 3px;
+        }
+
+        @media (max-width: 1033px) {}
+        #toast {
+      visibility: hidden;
+      max-width: 50px;
+      height: 50px;
+      /*margin-left: -125px;*/
+      margin: auto;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      bottom: 30px;
+      font-size: 17px;
+      white-space: nowrap;
+    }
+
+    #toast #img {
+        width: 60px;
+    height: 50px;
+    float: left;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding:10px;
+    }
+
+    #toast #desc {
+      color: #fff;
+      padding: 16px;
+      overflow: hidden;
+      /* white-space: nowrap; */
+    }
+
+    #toast.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+    }
+
+    @-webkit-keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes expand {
+      from {
+        min-width: 50px
+      }
+
+      to {
+        min-width: 350px
+      }
+    }
+
+    @keyframes expand {
+      from {
+        min-width: 50px
+      }
+
+      to {
+        min-width: 350px
+      }
+    }
+
+    @-webkit-keyframes stay {
+      from {
+        min-width: 350px
+      }
+
+      to {
+        min-width: 350px
+      }
+    }
+
+    @keyframes stay {
+      from {
+        min-width: 350px
+      }
+
+      to {
+        min-width: 350px
+      }
+    }
+
+    @-webkit-keyframes shrink {
+      from {
+        min-width: 350px;
+      }
+
+      to {
+        min-width: 50px;
+      }
+    }
+
+    @keyframes shrink {
+      from {
+        min-width: 350px;
+      }
+
+      to {
+        min-width: 50px;
+      }
+    }
+
+    @-webkit-keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+
+      to {
+        bottom: 60px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+
+      to {
+        bottom: 60px;
+        opacity: 0;
+      }
+    }
+
+    #img {
+      width: 10px;
+      /* filter: invert(100%); */
+      background: white;
+    }
+    </style>
+</head>
+
+<body>
+    <script src="navbar.js"></script>
+    <form action="https://sheetdb.io/api/v1/q7y2y6vqz3ja8" method="POST" id="sheetdb-form">
+        <div id="form">
+            <div class="container">
+                <h2>Send Us A Message</h2>
+                    <div class="inputs">
+                        <div class="name-input input">
+                            <input type="text" placeholder="Name" class="real-input" id="name" name="Name">
+                        </div>
+                        <div class="email-input input">
+                            <input type="email" placeholder="Email" class="real-input" id="email" name="Email">
+                        </div>
+                        <div class="message-input input">
+                            <textarea name="Message" id="message" col="50" row="10" class="real-input"
+                                placeholder="Your Message..."></textarea>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" id="submit-button">
+                            <div class="icon">
+                                <ion-icon name="send-outline"></ion-icon>
+                            </div>Send
+                        </button>
+                    </div>
+            </div>
+        </div>
+    </form>
+    <div id="toast">
+        <div><img src="favicon.png" alt="" id="img"></div>
+        <div id="desc">Your Message Has Been Sent !!</div>
+      </div>
+</body>
+<script>
+    var naam = document.getElementById("name");
+    var email = document.getElementById("email");
+    var message = document.getElementById("message");
+    var form = document.getElementById("sheetdb-form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(document.getElementById("sheetdb-form")),
+        })
+            .then((response) => response.json())
+            .then((html) => {
+                naam.value = "";
+                email.value = "";
+                message.value = "";
+                // alert("Your Message Has Been Sent");
+                launch_toast();
+            });
+        });
+        function launch_toast() {
+            var x = document.getElementById("toast")
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
+        }
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</html>
